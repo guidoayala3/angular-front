@@ -1,0 +1,32 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">TinyURL Service</h2>
+  
+    <form [formGroup]="encodeForm" (ngSubmit)="onEncode()" class="mb-4">
+      <div class="form-group">
+        <label for="longUrl">Enter URL to shorten:</label>
+        <input id="longUrl" formControlName="longUrl" class="form-control" placeholder="https://example.com" />
+      </div>
+  
+      
+  
+      <button type="submit" [disabled]="encodeForm.invalid" class="btn btn-primary mt-3">Shorten</button>
+    </form>
+  
+    <div *ngIf="shortUrl" class="alert alert-success">
+      Short URL: <a [href]="shortUrl" target="_blank">{{ shortUrl }}</a>
+    </div>
+  
+    <form [formGroup]="decodeForm" (ngSubmit)="onDecode()" class="mt-4">
+      <div class="form-group">
+        <label for="shortUrl">Enter short URL to decode:</label>
+        <input id="shortUrl" formControlName="shortUrl" class="form-control" placeholder="http://tinyurl.com/alias" />
+      </div>
+  
+      <button type="submit" [disabled]="decodeForm.invalid" class="btn btn-secondary mt-3">Decode</button>
+    </form>
+  
+    <div *ngIf="longUrl" class="alert alert-info mt-4">Original URL: {{ longUrl }}</div>
+  
+    <div *ngIf="errorMessage" class="alert alert-danger mt-4">{{ errorMessage }}</div>
+  </div>
+  

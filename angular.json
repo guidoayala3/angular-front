@@ -27,7 +27,8 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -62,7 +63,8 @@
               "buildTarget": "angular-front:build:production"
             },
             "development": {
-              "buildTarget": "angular-front:build:development"
+              "buildTarget": "angular-front:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -92,5 +94,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "ee452008-db5b-4ffb-85a9-2820db9dc02d"
   }
 }
