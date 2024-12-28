@@ -1,6 +1,6 @@
 {
     "/app/dev": {
-      "target": "https://tinyurl.com/app/dev",
+      "target": "https://tinyurl.com",
       "secure": true,
       "logLevel": "debug",
       "changeOrigin": true
